@@ -1,5 +1,5 @@
 # Flying with Jello's Mode7 Godot Shader
-![](media/example_1.png)
+![](/media/example_1.png)
 
 [DEMO](https://albertkun.github.io/godot-mode7-flying/builds/index.html)
 
@@ -11,16 +11,21 @@ The `MapCanvas` is another canvas layer that contains the `WorldMap`.
 
 The `WorldMap` is [sprite node](https://docs.godotengine.org/en/stable/classes/class_sprite.html) which has all the shader options that affects the transforms located in the `Materials/Shader` params:
 
-![](media/shader_params.png)
+![](/media/shader_params.png)
 
 ## Scene Tree Organization
 
-|-MapCanvas
-|----|WorldMap
-|-Player
-|----|Airship
-|--------|RemoteTransform2D
-|----|Camera2D
+-MapCanvas
+
+    |-WorldMap
+
+-Player
+
+    |-Airship
+
+        |-RemoteTransform2D
+
+    |-Camera2D
 
 ## Issues
 
