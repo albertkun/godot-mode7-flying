@@ -1,6 +1,8 @@
 # Flying with Jello's Mode7 Godot Shader
 ![](example_1.png)
 
+[DEMO](https://albertkun.github.io/godot-mode7-flying/builds/index.html)
+
 [Godot 3.2](https://www.godotengine.org/) project that is a minimal example of emulating a 3D environment with only 2D called Mode7. The project mainly implements [Jellonator](https://gist.github.com/Jellonator/0686c6e74d06745957de5a96fa00ec6c#file-godot_mode7_shader-shader)'s Mode7 shader.
 
 The `Player` [canvas layer](https://docs.godotengine.org/en/stable/tutorials/2d/canvas_layers.html) is set to Viewport parameter is set to `Follow`. The `RemoteTransform2D` node is used to follow the player's movement.
