@@ -15,17 +15,14 @@ The `WorldMap` is [sprite node](https://docs.godotengine.org/en/stable/classes/c
 
 ## Scene Tree Organization
 
+```
 -MapCanvas
-
     |-WorldMap
-
 -Player
-
     |-Airship
-
         |-RemoteTransform2D
-
     |-Camera2D
+```
 
 ## Issues
 
