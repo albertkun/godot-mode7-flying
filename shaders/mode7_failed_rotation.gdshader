@@ -21,21 +21,7 @@ uniform float PIVOT_FACTOR_Y;
 uniform float ROTATE_ANGLE;
 uniform vec2 TEST_PARAM;
 
-
-
-// vec2 rotate(vec2 view, vec2 pivot, float angle)
-// {
-
-// 	mat2 rotation = mat2(vec2(cos(angle), -sin(angle)),
-// 						vec2(sin(angle), cos(angle)));
-	
-// 	view -= pivot;
-// 	view = (view *0.5) * rotation;
-// 	view += pivot;
-// 	return view;
-// }
-
-
+// function to rotate a point around a pivot point
 vec2 rotate(vec2 view, vec2 pivot, float angle)
 {
 
@@ -70,6 +56,8 @@ void fragment() {
 	// divide position by w coordinate; this applies perspective
 	// Set UV to position; transform its range to [0, 1]
 	uv = (pos.xy + vec2(1, 1)+POSITION);
+
+	// if the player is rotating apply rotation
 	if (ROTATING) {
 		vec2 rotated_uv = rotate(uv,vec2(mat[3].x,mat[3].y), ROTATE_ANGLE);
 		uv = TEST_PARAM + (rotated_uv - TEST_PARAM);
