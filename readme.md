@@ -1,4 +1,4 @@
-# Flying with Jello's Mode7 Godot Shader
+# Flying with Jellonator's Mode7 Godot Shader
 ![](/media/example_1.png)
 
 [DEMO](https://albertkun.github.io/godot-mode7-flying/builds/index.html) | [BROKEN ROTATION BUILD](https://albertkun.github.io/godot-mode7-flying/builds/broken_rotation/index.html) 
