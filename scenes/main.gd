@@ -25,21 +25,23 @@ func _physics_process(delta):
 	
 	velocity = $Player/Airship.move_and_slide(velocity)
 
-	if Input.is_action_just_pressed("rotate_left"):
+	if Input.is_action_pressed("rotate_left"):
 		_rotate_map("left")
 		pass
 
-	if Input.is_action_just_pressed("rotate_right"):
+	if Input.is_action_pressed("rotate_right"):
 		_rotate_map("right")
 		pass
 
 func _rotate_map(direction):
 	match direction:
 		"left":
-			print('rotating map left')
+			# print('rotating map left')
 #			place holder for when rotation works
+			world_map_node.material.set_shader_param("ROTATE_ANGLE", world_map_node.material.get_shader_param("ROTATE_ANGLE") + .01)
 			pass
 		"right":
 #			place holder for when rotation works
-			print('rotating map right')
+			# print('rotating map right')
+			world_map_node.material.set_shader_param("ROTATE_ANGLE", world_map_node.material.get_shader_param("ROTATE_ANGLE") - .01)
 			pass

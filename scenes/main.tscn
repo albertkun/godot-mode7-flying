@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://shaders/mode7_original.gdshader" type="Shader" id=1]
+[ext_resource path="res://shaders/mode7_failed_rotation.gdshader" type="Shader" id=1]
 [ext_resource path="res://scenes/main.gd" type="Script" id=2]
 [ext_resource path="res://assets/map.png" type="Texture" id=3]
 [ext_resource path="res://assets/airship.png" type="Texture" id=4]
@@ -9,16 +9,14 @@
 shader = ExtResource( 1 )
 shader_param/TRANSFORM = Transform( 1, -0.5, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shader_param/DEPTH = Vector2( 0, 3 )
-shader_param/POSITION = Vector2( 0.314, 0.642 )
+shader_param/POSITION = Vector2( 0.236, 0.642 )
 shader_param/VIEW = null
-shader_param/REPEAT_X = true
-shader_param/REPEAT_Y = true
-shader_param/FLIP = null
+shader_param/REPEAT_X = false
+shader_param/REPEAT_Y = false
+shader_param/FLIP = false
 shader_param/ROTATING = true
 shader_param/TEST_POSITION = null
-shader_param/PIVOT_FACTOR_X = null
-shader_param/PIVOT_FACTOR_Y = null
-shader_param/ROTATE_ANGLE = 0.0
+shader_param/ROTATE_ANGLE = -2.26
 
 [sub_resource type="CapsuleShape2D" id=3]
 
@@ -29,12 +27,24 @@ script = ExtResource( 2 )
 
 [node name="WorldMap" type="Sprite" parent="MapCanvas"]
 material = SubResource( 2 )
-position = Vector2( 551, 440 )
+position = Vector2( -283, -351 )
 texture = ExtResource( 3 )
+centered = false
 
 [node name="Player" type="CanvasLayer" parent="."]
 layer = 3
 follow_viewport_enable = true
+
+[node name="Label" type="Label" parent="Player"]
+margin_left = 44.0
+margin_top = 39.0
+margin_right = 199.0
+margin_bottom = 70.0
+text = "press `q` to rotate left
+press `e` to rotate right"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Airship" type="KinematicBody2D" parent="Player"]
 position = Vector2( 265, 176 )
